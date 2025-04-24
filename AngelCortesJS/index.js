@@ -19,7 +19,7 @@ let dino = {
   isJumping: false
 };
 
-// Objeto obstáculo (cacto)
+// Objeto obstáculo (cactus)
 let obstacle = {
   x: canvas.width,
   y: canvas.height - 40,
@@ -145,6 +145,21 @@ document.getElementById("restartBtn").addEventListener("click", function () {
   scoreMilestoneReached = false;
   gameLoop();
 });
+
+// Reiniciar juego manualmente
+document.getElementById("restartbtn").addEventListener("click", function () {
+  gameOver = false;
+  score = 0;
+  gameSpeed = 5;
+  dino.y = canvas.height - dino.height;
+  dino.isJumping = false;
+  dino.vy = 0;
+  obstacle.x = canvas.width;
+  scoreMilestoneReached = false;
+  gameLoop();
+});
+
+
 
 // Iniciar juego
 window.onload = function () {
